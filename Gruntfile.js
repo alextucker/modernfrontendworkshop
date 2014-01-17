@@ -34,9 +34,18 @@ module.exports = function(grunt) {
             dev: {
                 files: [
                     "less/*",
-                    "js/*"
+                    "js/*",
+                    "jade/*"
                 ],
                 tasks: ['default']
+            }
+        },
+
+        jade: {
+            index: {
+                files: {
+                    "index.html": "jade/index.jade"
+                }
             }
         }
 
@@ -46,8 +55,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jade');
 
-    grunt.registerTask('default', ['less', 'concat']);
+    grunt.registerTask('default', ['less', 'concat', 'jade']);
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
 };
