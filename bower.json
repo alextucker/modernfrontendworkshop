@@ -1,0 +1,7 @@
+{
+  "name": "intro",
+  "dependencies": {
+    "angular": "1.2.8",
+    "bootstrap": "3.0.3"
+  }
+}
