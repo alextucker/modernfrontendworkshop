@@ -4,7 +4,12 @@ html(lang="en")
         title BEST Todo List Evar
         link(rel="stylesheet", type="text/css", href="css/style.dist.css")
 
-    body
-        h1 Hello
+    body(ng-app="MyApp")
+        h1 OMG Todos
+        .well(ng-controller='TodoController')
+            input(ng-model='new_todo', placeholder="New Todo")
+            .btn.btn-primary(ng-click='todos.push({name: new_todo, isDone:false})') New!
+            ul
+                li(ng-repeat='todo in todos', ng-class="{done: todo.isDone}", ng-click="todo.isDone = !todo.isDone") {{ todo.name }}
 
         script(src='js/app.dist.js')
